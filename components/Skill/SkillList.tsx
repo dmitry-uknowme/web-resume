@@ -5,7 +5,7 @@ const skills = [1, 20, 50];
 
 const SkillList = () => {
 	return (
-		<section className={styles.skillList}>
+		<section className={`skill-list ${styles.skillList}`}>
 			<h3 className={styles.skillList__title}>Skills</h3>
 			<div className={styles.skillList__items}>
 				{skills.map((skill) => (
