@@ -5,6 +5,8 @@ const About = () => {
 			<div className={styles.about__overlay}></div>
 			<div className={styles.about__content}>
 				<h3 className={styles.about__title}>About me</h3>
+
+				<p className='about__text'>Hi! I'm Dmitry and I'm a Web Developer</p>
 			</div>
 		</section>
 	);

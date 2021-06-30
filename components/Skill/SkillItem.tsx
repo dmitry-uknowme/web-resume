@@ -2,15 +2,14 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import useSectionObserver from '../../hooks/useSectionObserver';
 import styles from './index.module.sass';
+import { ISkill } from './SkillList';
 
-interface SkillItemProps {
-	value: number;
-	maxValue: number;
+interface SkillItemProps extends ISkill {
 	radius?: number;
 	fillAnimation?: any;
 }
 
-const SkillItem: React.FC<SkillItemProps> = ({ value, maxValue, radius, fillAnimation }) => {
+const SkillItem: React.FC<SkillItemProps> = ({ name, value, themes, maxValue, radius, fillAnimation }) => {
 	const circleLength = 879.645943005142;
 	const skillColors = [
 		{ bgColor: 'rgba(255,0,0,0.1)', borderColor: '#C0392B' },
@@ -29,7 +28,6 @@ const SkillItem: React.FC<SkillItemProps> = ({ value, maxValue, radius, fillAnim
 
 	useEffect(() => {
 		const percent = 100 - (value / circleLength) * 100;
-		// console.log('pec', percent);
 		if (percent < 50) {
 			setSkillLevel(skillColors[0]);
 		}
@@ -57,7 +55,15 @@ const SkillItem: React.FC<SkillItemProps> = ({ value, maxValue, radius, fillAnim
 					strokeDasharray={879.645943005142}
 					strokeDashoffset={value}></circle>
 			</svg>
-			<div className={styles.skillItem__value}>{(100 - (value / circleLength) * 100 - 1).toFixed(0)}</div>
+			<div className={styles.skillItem__value}>
+				{(100 - (value / circleLength) * 100 - 1).toFixed(0) === '-1' ? (100 - (value / circleLength) * 100).toFixed(0) : (100 - (value / circleLength) * 100 - 1).toFixed(0)}
+			</div>
+			<div className={styles.skillItem__name}>{name}</div>
+			<ul className='skillItem__themes'>
+				{themes?.map((theme) => (
+					<li className='skillItem__theme'>{theme.name}</li>
+				))}
+			</ul>
 		</div>
 	);
 };
