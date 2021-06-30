@@ -37,7 +37,7 @@ const SkillList = () => {
 				{ name: 'Pseudo-classes & Pseudo-elements', completed: true },
 				{ name: 'Displaying & Positioning', completed: true },
 				{ name: 'Flexbox & Grid', completed: true },
-				{ name: 'Preprocessors (SCSS|SASS, PostCSS)', completed: true },
+				{ name: 'Preprocessors (SCSS, SASS, PostCSS)', completed: true },
 				{ name: 'Frameworks (Bootstrap, MaterialUI)', completed: true },
 				{ name: 'Responsive & Adaptive design', completed: true },
 				{ name: 'Transitions & Animations', completed: true },
