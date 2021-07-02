@@ -1,0 +1,52 @@
+.contact
+    &List
+        margin-bottom: 1rem
+        font-family: 'Poppins'
+        width: 40%
+        display: flex
+        justify-content: space-around
+    &Item
+        background: #fff
+        border-radius: 2em
+        width: 2.5rem
+        padding: 0.4em
+        overflow: hidden
+        display: flex
+        align-items: center
+        transition: all 0.3s ease-in-out
+        &__icon
+            flex-shrink: 0
+            background: #fff
+            border-radius: 50%
+            font-size: 2.5rem !important
+            fill: black !important
+            transition: all 0.3s ease-in-out
+        &__icon._vk
+            background: #000
+        &__label
+            font-weight: 500
+            margin-left: 0.5em
+        &:hover
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1)
+            width: auto
+            padding-right: 2em
+        &:hover .contactItem__icon
+            fill: #fff !important
+        &:hover .contactItem__icon._vk
+            background: #2980b9 !important
+        &:hover .contactItem__icon._whatsapp
+            background: #2DD449FF !important
+        &:hover .contactItem__icon._telegram
+            background: #27A7E7FF !important
+        &:hover .contactItem__icon._github
+            background: none !important
+            fill: #551A8BFF !important
+            color: #551A8BFF
+    &Item._vk
+        color: #2980b9
+    &Item._whatsapp
+        color: #2DD449FF
+    &Item._telegram
+        color: #27A7E7FF
+    &Item._github
+        color: #551A8BFF

@@ -55,6 +55,7 @@ const SkillList = () => {
 				{ name: 'Closures', completed: true },
 				{ name: 'Async actions (Promise, Async & Await, Event loop)', completed: true },
 				{ name: 'Typescript', completed: true },
+				{ name: 'Builders (Webpack, Gulp)', completed: true },
 				{ name: 'Frameworks (ReactJS)', completed: true },
 				{ name: 'NodeJS (ExpressJS, NestJS)', completed: true },
 			],
