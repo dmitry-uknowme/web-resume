@@ -24,7 +24,7 @@ const ContactList = () => {
 				<div className={styles.contactItem__label}>Telegram</div>
 			</a>
 
-			<a className={`${styles.contactItem} ${styles._whatsapp}`} href='https://api.whatsapp.com/send/?phone=79273338310&text=Привет+Дмитрий%2C+я+менеджер компании' target='_blank'>
+			<a className={`${styles.contactItem} ${styles._whatsapp}`} href='https://api.whatsapp.com/send/?phone=79273338310&text=Привет+Дмитрий%2C+я+менеджер+по+персоналу+компании ...' target='_blank'>
 				<WhatsAppIcon className={`${styles.contactItem__icon} ${styles._whatsapp}`} />
 				<div className={styles.contactItem__label}>Whatsapp</div>
 			</a>
