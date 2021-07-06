@@ -15,9 +15,13 @@
         justify-content: space-around
 
 .skillItem
-    position: relative
-    width: 100px
-    height: 100px
+    &__circle
+        width: 250px
+        margin: auto
+        position: relative
+        display: flex
+        justify-content: center
+        align-items: center
     &__value
         font-size: 2rem
         position: absolute
@@ -26,3 +30,8 @@
         transform: translate(-50%,-50%)
     &__name
         text-align: center
+    &__themes
+        width: 250px
+    &__theme
+        margin: auto
+        // text-align: center

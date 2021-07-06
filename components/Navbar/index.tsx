@@ -20,9 +20,6 @@ const Navbar: React.FC<NavbarProps> = ({ customStyles }) => {
 			{/* <Link href='#'>
 				<div className={styles.navbar__link}>Work Expirience</div>
 			</Link> */}
-			<Link href='#'>
-				<div className={styles.navbar__link}>Contacts</div>
-			</Link>
 		</nav>
 	);
 };

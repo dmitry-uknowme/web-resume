@@ -1,6 +1,7 @@
 import Intro from '../components/Intro';
 import About from '../components/About';
 import SkillList from '../components/Skill/SkillList';
+import ProjectList from '../components/Project/ProjectList';
 import Head from 'next/head';
 
 const IndexPage = () => {
@@ -17,6 +18,7 @@ const IndexPage = () => {
 				<Intro />
 				<About />
 				<SkillList />
+				<ProjectList />
 			</div>
 		</>
 	);

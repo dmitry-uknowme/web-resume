@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import '../styles/index.sass';
+import 'swiper/swiper.scss';
 
 const WrappedApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 	return (

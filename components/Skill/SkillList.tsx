@@ -90,7 +90,7 @@ const SkillList = () => {
 			<h3 className={styles.skillList__title}>Skills</h3>
 			<div className={styles.skillList__row}>
 				{skills.map(({ name, value, themes, maxValue }) => (
-					<SkillItem name={name} value={value} themes={themes} maxValue={maxValue} radius={140} fillAnimation={runFillAnimation} />
+					<SkillItem key={name} name={name} value={value} themes={themes} maxValue={maxValue} radius={140} fillAnimation={runFillAnimation} />
 				))}
 			</div>
 			<h4 className='skillList__subtitle'>Current rank: Junior Developer</h4>
