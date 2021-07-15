@@ -3,8 +3,10 @@ import About from '../components/About';
 import SkillList from '../components/Skill/SkillList';
 import ProjectList from '../components/Project/ProjectList';
 import Head from 'next/head';
+import axios from 'axios';
+import { GetServerSideProps } from 'next';
 
-const IndexPage = () => {
+const IndexPage = ({ projects }) => {
 	return (
 		<>
 			<Head>
@@ -18,10 +20,19 @@ const IndexPage = () => {
 				<Intro />
 				<About />
 				<SkillList />
-				<ProjectList />
+				<ProjectList serverProjects={projects} />
 			</div>
 		</>
 	);
+};
+
+export const getServerSideProps: GetServerSideProps = async () => {
+	const { data } = await axios.get('http://localhost:9000/api/projects');
+	return {
+		props: {
+			projects: data,
+		},
+	};
 };
 
 export default IndexPage;

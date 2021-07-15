@@ -4,13 +4,16 @@ import styles from './index.module.sass';
 
 SwiperCore.use([Navigation]);
 
-const ProjectList = () => {
+const ProjectList = ({ serverProjects }) => {
+	console.log('projects from db', serverProjects);
 	return (
 		<section className={styles.projectList}>
 			<div className='section__title projectList__title'>Portfolio</div>
 
-			<Swiper navigation>
-				<SwiperSlide>1</SwiperSlide>
+			<Swiper className={styles.projectList__slider} navigation>
+				<SwiperSlide>
+					<iframe className={styles.projectList__demo} src='https://new-dostupny.web.app/' title='Dostupny dom'></iframe>
+				</SwiperSlide>
 				<SwiperSlide>2</SwiperSlide>
 				<SwiperSlide>3</SwiperSlide>
 			</Swiper>
