@@ -5,8 +5,13 @@ import ProjectList from '../components/Project/ProjectList';
 import Head from 'next/head';
 import axios from 'axios';
 import { GetServerSideProps } from 'next';
+import IProject from '../types/project';
 
-const IndexPage = ({ projects }) => {
+interface IndexPageProps {
+	projects: IProject[];
+}
+
+const IndexPage: React.FC<IndexPageProps> = ({ projects }) => {
 	return (
 		<>
 			<Head>
