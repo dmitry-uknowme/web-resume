@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import useSectionObserver from '../../hooks/useSectionObserver';
+import useSection from '../../hooks/useSection';
 import styles from './index.module.sass';
 import SkillItem from './SkillItem';
 
@@ -44,7 +44,7 @@ const SkillList = () => {
 			],
 		},
 		{
-			name: 'Native JS',
+			name: 'JavaScript',
 			value: circleLength,
 			maxValue: 50,
 			themes: [
@@ -86,7 +86,7 @@ const SkillList = () => {
 	};
 
 	return (
-		<section className={`skill-list ${styles.skillList}`}>
+		<section className={`skill-list ${styles.skillList}`} id='skill-list'>
 			<h3 className={styles.skillList__title}>Skills</h3>
 			<div className={styles.skillList__row}>
 				{skills.map(({ name, value, themes, maxValue }) => (

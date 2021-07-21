@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useSectionObserver = () => {
+const useSection = () => {
 	const [currentSection, setCurrentSection] = useState<any>();
 	useEffect(() => {
 		const sections: HTMLElement[] = Array.from(document.querySelectorAll('section'));
@@ -8,20 +8,17 @@ const useSectionObserver = () => {
 			(entries, observer) => {
 				entries.map(({ target, isIntersecting }) => {
 					if (isIntersecting) {
-						// console.log(target);
 						setCurrentSection({ el: target, name: target.classList[0] });
 						// observer.unobserve(target);
 					}
 				});
 			},
-			{ threshold: 0.8 }
+			{ threshold: 0.7 }
 		);
-		sections.map((section) => {
-			observer.observe(section);
-		});
+		sections.map((section) => observer.observe(section));
 	}, []);
 
 	return currentSection;
 };
 
-export default useSectionObserver;
+export default useSection;

@@ -1,5 +1,6 @@
-import { Schema, Document, model, connect } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
+const ObjectId = Schema.Types.ObjectId;
 interface Project {
 	name: string;
 	description?: string;
@@ -10,6 +11,7 @@ interface Project {
 }
 
 const projectSchema = new Schema<Project>({
+	id: ObjectId,
 	name: { type: String, required: true },
 	description: String,
 	images: { type: Array, required: true },

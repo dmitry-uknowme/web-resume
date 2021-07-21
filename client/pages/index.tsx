@@ -31,7 +31,7 @@ const IndexPage: React.FC<IndexPageProps> = ({ projects }) => {
 	);
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps = async () => {
 	const { data } = await axios.get('http://localhost:9000/api/projects');
 	return {
 		props: {

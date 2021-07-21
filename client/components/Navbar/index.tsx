@@ -11,7 +11,7 @@ const Navbar: React.FC<NavbarProps> = ({ customStyles }) => {
 			<Link href='#'>
 				<div className={styles.navbar__link}>About me</div>
 			</Link>
-			<Link href='#'>
+			<Link href='#skill-list'>
 				<div className={styles.navbar__link}>Skills</div>
 			</Link>
 			<Link href='#'>

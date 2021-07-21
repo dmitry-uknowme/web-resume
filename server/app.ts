@@ -32,7 +32,7 @@ const project = new projectModel({
 	repoLink: 'https://github.com/dmitry-uknowme/uleu-elbrus',
 	demoLink: 'https://elbrus-ufa.ru',
 });
-project.save();
-console.log('Saved');
+// project.save();
+// console.log('Saved');
 
 app.listen(PORT, () => console.log(`Server has started on ${PORT} port`));
