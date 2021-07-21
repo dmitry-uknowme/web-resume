@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import ScrollLink from '../ScrollLink';
 import styles from './index.module.sass';
 
 interface NavbarProps {
@@ -8,9 +9,12 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ customStyles }) => {
 	return (
 		<nav className={styles.navbar} style={{ ...customStyles }}>
-			<Link href='#'>
+			{/* <Link href='#'> */}
+			<ScrollLink to='about'>
 				<div className={styles.navbar__link}>About me</div>
-			</Link>
+			</ScrollLink>
+
+			{/* </Link> */}
 			<Link href='#skill-list'>
 				<div className={styles.navbar__link}>Skills</div>
 			</Link>
