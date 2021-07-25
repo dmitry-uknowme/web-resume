@@ -7,7 +7,7 @@ import styles from './index.module.sass';
 const ProjectItem: React.FC<IProject> = ({ _id, name, description, repoLink, demoLink }) => {
 	const [currentDemoLink, setCurrentDemoLink] = useState<string>('');
 	const currentSection = useSection();
-
+	console.log('cur', currentSection);
 	useEffect(() => {
 		if (currentSection?.name === 'project-list' && demoLink && currentDemoLink !== '') {
 			setCurrentDemoLink(demoLink);
@@ -37,7 +37,7 @@ const ProjectItem: React.FC<IProject> = ({ _id, name, description, repoLink, dem
 					</a>
 				</div>
 			</div>
-			<iframe className={styles.project__demo} src={demoLink} title='Dostupny dom'></iframe>
+			<iframe className={styles.project__demo} src={currentDemoLink} title='Dostupny dom'></iframe>
 		</div>
 	);
 };

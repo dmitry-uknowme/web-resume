@@ -15,12 +15,12 @@ const Navbar: React.FC<NavbarProps> = ({ customStyles }) => {
 			</ScrollLink>
 
 			{/* </Link> */}
-			<Link href='#skill-list'>
+			<ScrollLink to='skill-list'>
 				<div className={styles.navbar__link}>Skills</div>
-			</Link>
-			<Link href='#'>
+			</ScrollLink>
+			<ScrollLink to='project-list'>
 				<div className={styles.navbar__link}>Portfolio</div>
-			</Link>
+			</ScrollLink>
 			{/* <Link href='#'>
 				<div className={styles.navbar__link}>Work Expirience</div>
 			</Link> */}

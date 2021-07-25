@@ -13,7 +13,7 @@ const useSection = () => {
 					}
 				});
 			},
-			{ threshold: 0.7 }
+			{ threshold: 0.8 }
 		);
 		sections.map((section) => observer.observe(section));
 	}, []);

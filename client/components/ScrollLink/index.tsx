@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import useSection from '../../hooks/useSection';
+import React from 'react';
 
 interface ScrollLinkProps {
 	children: React.ReactNode;
@@ -7,26 +6,29 @@ interface ScrollLinkProps {
 }
 
 const ScrollLink: React.FC<ScrollLinkProps> = ({ children, to }) => {
-	const currentSection = useSection();
-	// console.log('sect', currentSection?.name);
-
-	const scrollHandler = () => {
-		let i = 0;
-		requestAnimationFrame(() => {
-			const scrollTimer: ReturnType<typeof setInterval> = setInterval(() => {
-				console.log('sect', currentSection, to);
-				if (currentSection?.name === to) {
-					console.error('end');
-					return clearInterval(scrollTimer);
-				}
-				window.scrollBy(0, i);
-				i++;
-			}, 100);
-		});
+	const clickHandler = (e: React.ChangeEvent<HTMLElement>) => {
+		e.preventDefault();
+		const w = window.pageYOffset;
+		const hash = to;
+		const t = document.querySelector(`.${hash}`)?.getBoundingClientRect().top;
+		const V = 0.5;
+		let start = null;
+		const scrollStep = (time: number) => {
+			if (start === null) start = time;
+			var progress = time - start,
+				r = t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t);
+			window.scrollTo(0, r);
+			if (r !== w + t) {
+				requestAnimationFrame(scrollStep);
+			} else {
+				window.location.hash = hash;
+			}
+		};
+		requestAnimationFrame(scrollStep);
 	};
 
 	return (
-		<div className='scroll-link' onClick={scrollHandler}>
+		<div className='scroll-link' onClick={clickHandler}>
 			{children}
 		</div>
 	);
