@@ -12,12 +12,17 @@ const ScrollLink: React.FC<ScrollLinkProps> = ({ children, to }) => {
 		const hash = to;
 		const t = document.querySelector(`.${hash}`)?.getBoundingClientRect().top;
 		const V = 0.5;
+		//@ts-expect-error
 		let start = null;
 		const scrollStep = (time: number) => {
+			//@ts-expect-error
 			if (start === null) start = time;
+			//@ts-expect-error
 			var progress = time - start,
+				//@ts-expect-error
 				r = t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t);
 			window.scrollTo(0, r);
+			//@ts-expect-error
 			if (r !== w + t) {
 				requestAnimationFrame(scrollStep);
 			} else {
@@ -28,6 +33,7 @@ const ScrollLink: React.FC<ScrollLinkProps> = ({ children, to }) => {
 	};
 
 	return (
+		//@ts-expect-error
 		<div className='scroll-link' onClick={clickHandler}>
 			{children}
 		</div>

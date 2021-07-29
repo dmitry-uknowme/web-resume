@@ -1,9 +1,61 @@
 .cursor
-    width: 50px
-    height: 50px
-    border-radius: 50%
-    border: 2px solid darkred
-    position: fixed
-    left: -100px
-    top: -100px
-    pointer-events: none
+    // background: red
+    // width: 50px
+    // height: 50px
+    // border-radius: 50%
+    // position: relative
+    // left: -25px
+    // top: -25px
+    // pointer-events: none
+    // z-index: 10
+    &::before
+
+        // z-index: -1
+        // content: ''
+        // position: absolute
+        // top: 0
+        // left: 0
+        // width: 100%
+        // height: 100%
+        // border-radius: 50%
+        // background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)
+        // animation: animatedgradient 3s ease alternate infinite
+        // background-size: 300% 300%
+        // background-origin: border-box
+        // background-clip: content-box, border-box
+
+// .circle
+//     width: 300px
+//     height: 300px
+//     background: #bbb
+//     border-radius: 50%
+//     position: relative
+//     text-align: center
+//     padding: 20px
+//     box-sizing: border-box
+//     &::before
+//         border-radius: 100%
+//         width: 100%
+//         height: 100%
+//         content: ''
+//         background-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%)
+//         padding: 10px
+//         top: -10px
+//         left: -10px
+//         position: absolute
+//         z-index: -1
+//         background-image: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82)
+//         animation: animatedgradient 3s ease alternate infinite
+//         background-size: 300% 300%
+//         background-origin: border-box
+//         background-clip: content-box, border-box
+
+@keyframes animatedgradient
+    0%
+        background-position: 0% 50%
+
+    50%
+        background-position: 100% 50%
+
+    100%
+        background-position: 0% 50%

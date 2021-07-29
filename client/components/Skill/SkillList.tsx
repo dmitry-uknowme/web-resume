@@ -29,7 +29,7 @@ const SkillList = () => {
 		{
 			name: 'CSS',
 			value: circleLength,
-			maxValue: 30,
+			maxValue: 70,
 			themes: [
 				{ name: 'Selectors', completed: true },
 				{ name: 'Images & Background', completed: true },
